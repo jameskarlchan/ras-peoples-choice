@@ -86,7 +86,7 @@ body::after {
   z-index: 0;
 }
 
-.wrap {
+.ras-wrap {
   position: relative;
   z-index: 2;
   max-width: 1280px;
@@ -96,7 +96,7 @@ body::after {
 
 /* ====================== LOGO BAR ====================== */
 
-.logo-bar {
+.ras-logo-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -106,7 +106,7 @@ body::after {
   margin-bottom: 32px;
 }
 
-.logo-link {
+.ras-logo-link {
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -114,45 +114,45 @@ body::after {
   flex-shrink: 0;
 }
 
-.logo-link:hover { opacity: 0.8; }
+.ras-logo-link:hover { opacity: 0.8; }
 
-.logo-link img {
+.ras-logo-link img {
   display: block;
   width: auto;
   object-fit: contain;
 }
 
-.logo-ras img { max-height: 100px; }
-.logo-epicurean img { max-height: 120px; }
+.ras-logo-ras img { max-height: 100px; }
+.ras-logo-epicurean img { max-height: 120px; }
 
 @media (max-width: 600px) {
-  .logo-ras img { max-height: 64px; }
-  .logo-epicurean img { max-height: 80px; }
-  .logo-bar { padding: 12px 4px 20px; margin-bottom: 20px; }
+  .ras-logo-ras img { max-height: 64px; }
+  .ras-logo-epicurean img { max-height: 80px; }
+  .ras-logo-bar { padding: 12px 4px 20px; margin-bottom: 20px; }
 }
 
 /* ====================== HERO ====================== */
 
-.hero {
+.ras-hero {
   text-align: center;
   padding: 32px 8px 24px;
   position: relative;
 }
 
-.eyebrow-frame {
+.ras-eyebrow-frame {
   display: inline-flex;
   align-items: center;
   gap: 16px;
   margin-bottom: 28px;
 }
 
-.eyebrow-line {
+.ras-eyebrow-line {
   width: 60px;
   height: 1px;
   background: linear-gradient(to right, transparent, var(--gold), transparent);
 }
 
-.eyebrow {
+.ras-eyebrow {
   font-family: 'Cinzel', serif;
   font-weight: 500;
   font-size: 11px;
@@ -162,7 +162,7 @@ body::after {
   white-space: nowrap;
 }
 
-.hero h1 {
+.ras-hero h1 {
   font-family: 'Cinzel Decorative', serif;
   font-weight: 900;
   font-size: clamp(38px, 7vw, 68px);
@@ -180,7 +180,7 @@ body::after {
   position: relative;
 }
 
-.hero h1 .ampersand {
+.ras-hero h1 .ampersand {
   font-style: italic;
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
@@ -188,7 +188,7 @@ body::after {
   vertical-align: middle;
 }
 
-.hero .latin {
+.ras-hero .ras-latin {
   font-family: 'Cinzel', serif;
   font-weight: 500;
   font-size: clamp(11px, 1.8vw, 14px);
@@ -199,7 +199,7 @@ body::after {
   opacity: 0.85;
 }
 
-.hero .latin-translation {
+.ras-hero .ras-latin-translation {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-weight: 300;
@@ -209,7 +209,7 @@ body::after {
   letter-spacing: 0.03em;
 }
 
-.hero .tagline {
+.ras-hero .ras-tagline {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
   font-size: clamp(15px, 2.2vw, 19px);
@@ -247,12 +247,12 @@ body::after {
 
 /* ====================== COUNTDOWN ====================== */
 
-.countdown-section {
+.ras-arena-timer {
   text-align: center;
   margin: 28px 0 8px;
 }
 
-.countdown-label {
+.ras-countdown-label {
   font-family: 'Cinzel', serif;
   font-weight: 500;
   font-size: 10px;
@@ -263,14 +263,14 @@ body::after {
   opacity: 0.85;
 }
 
-.countdown-wrap {
+.ras-countdown-wrap {
   display: inline-flex;
   gap: 8px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.countdown-item {
+.ras-countdown-item {
   background: linear-gradient(180deg, #1A1612 0%, #0F0B08 100%);
   border: 1px solid var(--border-gold);
   padding: 12px 16px;
@@ -281,7 +281,7 @@ body::after {
   box-shadow: inset 0 1px 0 rgba(232,201,122,0.15);
 }
 
-.countdown-item .num {
+.ras-countdown-item .num {
   font-family: 'Cinzel', serif;
   font-weight: 700;
   font-size: clamp(24px, 4vw, 32px);
@@ -291,7 +291,7 @@ body::after {
   text-shadow: 0 2px 8px rgba(232,201,122,0.3);
 }
 
-.countdown-item .lbl {
+.ras-countdown-item .lbl {
   font-family: 'Cinzel', serif;
   font-weight: 500;
   font-size: 9px;
@@ -304,13 +304,13 @@ body::after {
 
 /* ====================== LIVE STATS ====================== */
 
-.stats-bar {
+.ras-stats-bar {
   display: flex;
   justify-content: center;
   margin: 24px auto 0;
 }
 
-.stat-pill {
+.ras-stat-pill {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -326,7 +326,7 @@ body::after {
   box-shadow: inset 0 1px 0 rgba(232,201,122,0.1);
 }
 
-.stat-pill .dot {
+.ras-stat-pill .dot {
   width: 8px;
   height: 8px;
   background: #4CD964;
@@ -340,7 +340,7 @@ body::after {
   50% { opacity: 0.4; transform: scale(0.85); }
 }
 
-.stat-pill .count {
+.ras-stat-pill .count {
   font-family: 'Cinzel', serif;
   font-weight: 700;
   color: var(--gold-bright);
@@ -550,7 +550,7 @@ body::after {
 
 /* ====================== SEARCH ====================== */
 
-.controls {
+.ras-controls {
   position: sticky;
   top: 0;
   z-index: 50;
@@ -940,7 +940,7 @@ body::after {
 
 .modal-overlay.visible { display: flex; }
 
-.modal {
+.ras-modal {
   background: linear-gradient(160deg, var(--stone-mid) 0%, var(--stone-marble) 100%);
   border: 2px solid var(--gold-deep);
   border-radius: 4px;
@@ -952,8 +952,8 @@ body::after {
   position: relative;
 }
 
-.modal::before,
-.modal::after {
+.ras-modal::before,
+.ras-modal::after {
   content: '';
   position: absolute;
   width: 20px;
@@ -961,10 +961,10 @@ body::after {
   border: 2px solid var(--gold);
 }
 
-.modal::before { top: -2px; left: -2px; border-right: none; border-bottom: none; }
-.modal::after { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+.ras-modal::before { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+.ras-modal::after { bottom: -2px; right: -2px; border-left: none; border-top: none; }
 
-.modal h3 {
+.ras-modal h3 {
   font-family: 'Cinzel', serif;
   font-weight: 700;
   font-size: 13px;
@@ -974,7 +974,7 @@ body::after {
   margin-bottom: 8px;
 }
 
-.modal .selected-display {
+.ras-modal .selected-display {
   font-family: 'Cinzel Decorative', serif;
   font-weight: 900;
   font-size: clamp(20px, 3.5vw, 26px);
@@ -985,7 +985,7 @@ body::after {
   line-height: 1.2;
 }
 
-.modal .modal-instruction {
+.ras-modal .modal-instruction {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   color: var(--cream-dim);
@@ -1167,7 +1167,7 @@ body::after {
 
 /* ====================== RULES ====================== */
 
-.rules {
+.ras-rules {
   max-width: 720px;
   margin: 32px auto 32px;
   padding: 24px 28px;
@@ -1176,36 +1176,37 @@ body::after {
   border-radius: 2px;
 }
 
-.rules h3 {
+.ras-rules h3 {
   font-family: 'Cinzel', serif;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
-.rules ul {
+.ras-rules ul {
   list-style: none;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 16px;
-  line-height: 1.8;
-  color: var(--cream-dim);
+  font-size: 17px;
+  line-height: 1.7;
+  color: #E5DCC4;
+  font-weight: 400;
 }
 
-.rules li {
+.ras-rules li {
   padding-left: 22px;
   position: relative;
-  margin-bottom: 4px;
+  margin-bottom: 10px;
 }
 
-.rules li::before {
+.ras-rules li::before {
   content: '◆';
   position: absolute;
   left: 0;
   color: var(--gold);
-  font-size: 9px;
+  font-size: 10px;
   top: 9px;
 }
 
@@ -1235,7 +1236,7 @@ body.voting-closed #cast-vote-section { display: none; }
 
 /* ====================== TOAST ====================== */
 
-.toast {
+.ras-toast {
   position: fixed;
   top: 24px;
   left: 50%;
@@ -1254,7 +1255,7 @@ body.voting-closed #cast-vote-section { display: none; }
   text-align: center;
 }
 
-.toast.visible { transform: translateX(-50%) translateY(0); }
+.ras-toast.visible { transform: translateX(-50%) translateY(0); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -1299,7 +1300,7 @@ body.voting-locked .arena-subtitle::after {
 
 /* ====================== GOLD EMBER PARTICLES ====================== */
 
-.particles {
+.ras-particles {
   position: fixed;
   inset: 0;
   pointer-events: none;
@@ -1307,7 +1308,7 @@ body.voting-locked .arena-subtitle::after {
   overflow: hidden;
 }
 
-.ember {
+.ras-ember {
   position: absolute;
   bottom: -10px;
   background: radial-gradient(circle, rgba(255,224,160,0.9) 0%, rgba(232,201,122,0.6) 40%, rgba(184,148,62,0) 70%);
@@ -1344,12 +1345,12 @@ body::before {
 
 /* ====================== ANIMATED TITLE SWEEP ====================== */
 
-.hero h1 {
+.ras-hero h1 {
   position: relative;
   overflow: hidden;
 }
 
-.hero h1::after {
+.ras-hero h1::after {
   content: '';
   position: absolute;
   top: 0;
@@ -1373,13 +1374,13 @@ body::before {
 
 /* ====================== TYPEWRITER LATIN ====================== */
 
-.hero .latin {
+.ras-hero .ras-latin {
   opacity: 0;
   display: inline-block;
   min-height: 1.5em;
 }
 
-.hero .latin::after {
+.ras-hero .ras-latin::after {
   content: '|';
   display: inline-block;
   margin-left: 2px;
@@ -1393,25 +1394,25 @@ body::before {
 }
 
 /* Hide cursor once typing settles */
-.hero .latin[data-typed]::after {
+.ras-hero .ras-latin[data-typed]::after {
   animation-iteration-count: 6;
   animation-fill-mode: forwards;
 }
 
 /* ====================== HOW TO VOTE ====================== */
 
-.how-to-vote {
+.ras-how-to-vote {
   max-width: 1100px;
   margin: 48px auto 32px;
   padding: 0 16px;
 }
 
-.how-header {
+.ras-how-header {
   text-align: center;
   margin-bottom: 32px;
 }
 
-.how-eyebrow {
+.ras-how-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 16px;
@@ -1423,13 +1424,13 @@ body::before {
   text-transform: uppercase;
 }
 
-.how-eyebrow .eyebrow-line {
+.ras-how-eyebrow .ras-eyebrow-line {
   width: 60px;
   height: 1px;
   background: linear-gradient(to right, transparent, var(--gold), transparent);
 }
 
-.how-steps {
+.ras-how-steps {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
@@ -1438,13 +1439,13 @@ body::before {
 }
 
 @media (min-width: 700px) {
-  .how-steps {
+  .ras-how-steps {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 }
 
-.how-step {
+.ras-how-step {
   text-align: center;
   padding: 28px 20px 24px;
   background: linear-gradient(160deg, rgba(43,35,28,0.5) 0%, rgba(15,11,8,0.3) 100%);
@@ -1455,8 +1456,8 @@ body::before {
   box-shadow: inset 0 1px 0 rgba(232,201,122,0.08);
 }
 
-.how-step::before,
-.how-step::after {
+.ras-how-step::before,
+.ras-how-step::after {
   content: '';
   position: absolute;
   width: 12px;
@@ -1465,27 +1466,27 @@ body::before {
   opacity: 0.7;
 }
 
-.how-step::before {
+.ras-how-step::before {
   top: 6px;
   left: 6px;
   border-right: none;
   border-bottom: none;
 }
 
-.how-step::after {
+.ras-how-step::after {
   bottom: 6px;
   right: 6px;
   border-left: none;
   border-top: none;
 }
 
-.how-step:hover {
+.ras-how-step:hover {
   transform: translateY(-3px);
   border-color: var(--border-bright);
   box-shadow: 0 12px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(232,201,122,0.15);
 }
 
-.how-numeral {
+.ras-how-numeral {
   font-family: 'Cinzel Decorative', serif;
   font-weight: 900;
   font-size: clamp(40px, 6vw, 56px);
@@ -1497,8 +1498,8 @@ body::before {
   position: relative;
 }
 
-.how-numeral::before,
-.how-numeral::after {
+.ras-how-numeral::before,
+.ras-how-numeral::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -1507,10 +1508,10 @@ body::before {
   background: linear-gradient(to right, transparent, var(--gold-deep), transparent);
 }
 
-.how-numeral::before { right: calc(100% + 12px); }
-.how-numeral::after { left: calc(100% + 12px); }
+.ras-how-numeral::before { right: calc(100% + 12px); }
+.ras-how-numeral::after { left: calc(100% + 12px); }
 
-.how-title {
+.ras-how-title {
   font-family: 'Cinzel', serif;
   font-weight: 700;
   font-size: clamp(13px, 1.8vw, 15px);
@@ -1520,7 +1521,7 @@ body::before {
   margin-bottom: 12px;
 }
 
-.how-text {
+.ras-how-text {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(14px, 1.8vw, 16px);
   line-height: 1.6;
