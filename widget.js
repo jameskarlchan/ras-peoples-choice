@@ -351,11 +351,11 @@ async function loadStats() {
       `).join('');
     } else {
       document.getElementById('champions-list').innerHTML =
-        '<li class="champions-loading">Awaiting the first cries of the people...</li>';
+        '<li class="champions-loading">The marble stands silent. The torches are lit. Cast the first vote and let the chorus of champions begin.</li>';
     }
   } catch (err) {
     document.getElementById('champions-list').innerHTML =
-      '<li class="champions-loading">Awaiting the first cries of the people...</li>';
+      '<li class="champions-loading">The marble stands silent. The torches are lit. Cast the first vote and let the chorus of champions begin.</li>';
   }
 }
 loadStats();
