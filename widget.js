@@ -158,8 +158,8 @@ function selectNominee(name) {
 
 // ============ PRE-LAUNCH MODAL ============
 function showPreLaunchModal() {
-  const ras-modal = document.getElementById('pre-launch-modal');
-  ras-modal.classList.add('visible');
+  const modal = document.getElementById('pre-launch-modal');
+  modal.classList.add('visible');
   document.body.style.overflow = 'hidden';
   updatePreLaunchCountdown();
 }
@@ -184,13 +184,13 @@ setInterval(() => {
   }
 }, 1000);
 
-// Pre-launch ras-modal close button
+// Pre-launch modal close button
 document.addEventListener('click', (e) => {
   if (e.target && e.target.id === 'btn-prelaunch-close') {
     document.getElementById('pre-launch-modal').classList.remove('visible');
     document.body.style.overflow = '';
   }
-  // Click outside ras-modal to close
+  // Click outside modal to close
   if (e.target && e.target.id === 'pre-launch-modal') {
     document.getElementById('pre-launch-modal').classList.remove('visible');
     document.body.style.overflow = '';
@@ -229,13 +229,13 @@ searchClear.addEventListener('click', () => {
 });
 
 // ============ VOTE FLOW ============
-const ras-modal = document.getElementById('ras-modal');
+const modal = document.getElementById('modal');
 const voteBtn = document.getElementById('vote-btn');
 
 voteBtn.addEventListener('click', () => {
   if (!selectedNominee || votingClosed) return;
   document.getElementById('modal-selection').textContent = selectedNominee;
-  ras-modal.classList.add('visible');
+  modal.classList.add('visible');
   document.body.style.overflow = 'hidden';
   if (window.grecaptcha) try { grecaptcha.reset(); } catch(e) {}
   captchaToken = null;
@@ -243,10 +243,10 @@ voteBtn.addEventListener('click', () => {
 });
 
 document.getElementById('btn-cancel').addEventListener('click', closeModal);
-ras-modal.addEventListener('click', (e) => { if (e.target === ras-modal) closeModal(); });
+modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
 
 function closeModal() {
-  ras-modal.classList.remove('visible');
+  modal.classList.remove('visible');
   document.body.style.overflow = '';
 }
 
@@ -323,10 +323,10 @@ document.getElementById('btn-share').addEventListener('click', async () => {
 });
 
 function showToast(msg) {
-  const ras-toast = document.getElementById('ras-toast');
-  ras-toast.textContent = msg;
-  ras-toast.classList.add('visible');
-  setTimeout(() => ras-toast.classList.remove('visible'), 3500);
+  const toastEl = document.getElementById('toast');
+  toastEl.textContent = msg;
+  toastEl.classList.add('visible');
+  setTimeout(() => toastEl.classList.remove('visible'), 3500);
 }
 
 // ============ LIVE STATS ============
@@ -363,7 +363,7 @@ setInterval(loadStats, 30000);
 
 // ============ GOLD EMBER PARTICLES ============
 function spawnParticles() {
-  const container = document.getElementById('ras-particles');
+  const container = document.getElementById('particles');
   if (!container) return;
 
   const isMobile = window.innerWidth < 768;
