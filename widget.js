@@ -360,3 +360,65 @@ async function loadStats() {
 }
 loadStats();
 setInterval(loadStats, 30000);
+
+// ============ GOLD EMBER PARTICLES ============
+function spawnParticles() {
+  const container = document.getElementById('particles');
+  if (!container) return;
+
+  const isMobile = window.innerWidth < 768;
+  const count = isMobile ? 12 : 24; // Lower count on mobile for performance
+
+  for (let i = 0; i < count; i++) {
+    const p = document.createElement('span');
+    p.className = 'ember';
+    const left = Math.random() * 100;
+    const size = 1 + Math.random() * 2.5;
+    const duration = 12 + Math.random() * 16;
+    const delay = Math.random() * 20;
+    const drift = (Math.random() - 0.5) * 80;
+    p.style.cssText = `left: ${left}%; width: ${size}px; height: ${size}px; --drift: ${drift}px; animation-duration: ${duration}s; animation-delay: -${delay}s;`;
+    container.appendChild(p);
+  }
+}
+spawnParticles();
+
+// ============ PARALLAX BACKGROUND ============
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      const y = window.scrollY;
+      document.documentElement.style.setProperty('--parallax-y', `${y * 0.15}px`);
+      ticking = false;
+    });
+    ticking = true;
+  }
+}, { passive: true });
+
+// ============ TYPEWRITER ON LATIN ============
+function typewriterLatin() {
+  const el = document.querySelector('.hero .latin');
+  if (!el || el.dataset.typed) return;
+  el.dataset.typed = '1';
+  const text = el.textContent;
+  el.textContent = '';
+  el.style.opacity = '1';
+  let i = 0;
+  const tick = () => {
+    if (i <= text.length) {
+      el.textContent = text.substring(0, i);
+      i++;
+      setTimeout(tick, 80);
+    }
+  };
+  // Delay typing slightly so it feels intentional
+  setTimeout(tick, 600);
+}
+
+// Trigger typewriter when page is ready
+if (document.readyState === 'complete') {
+  typewriterLatin();
+} else {
+  window.addEventListener('load', typewriterLatin);
+}
