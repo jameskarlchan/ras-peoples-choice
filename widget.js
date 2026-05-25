@@ -1,4 +1,5 @@
 // ============ CONFIGURATION ============
+const VOTING_OPEN = new Date('2026-05-27T00:00:00+08:00').getTime();
 const VOTING_CLOSE = new Date('2026-09-03T00:00:00+08:00').getTime();
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw1aNpbIZoDmor4jI8Rgrj5P0Yr7FvSrjBxLqR9g8ruAnmscxwTfNH6P1X_kWwAoEuaWg/exec';
 
@@ -44,6 +45,7 @@ const NOMINEES = [
 let selectedNominee = null;
 let captchaToken = null;
 let votingClosed = false;
+let votingNotYetOpen = Date.now() < VOTING_OPEN;
 
 const initials = (name) => {
   const clean = name.replace(/[^A-Z\s]/gi, '').trim();
@@ -55,8 +57,31 @@ const initials = (name) => {
 // ============ COUNTDOWN ============
 function updateCountdown() {
   const now = Date.now();
-  const diff = VOTING_CLOSE - now;
-  if (diff <= 0) {
+  let target, label;
+
+  if (now < VOTING_OPEN) {
+    // Pre-launch: count down to voting opens
+    target = VOTING_OPEN;
+    label = 'The arena opens in';
+    if (!document.body.classList.contains('voting-locked')) {
+      document.body.classList.add('voting-locked');
+      const cdLabel = document.querySelector('.countdown-label');
+      if (cdLabel) cdLabel.textContent = label;
+    }
+  } else if (now < VOTING_CLOSE) {
+    // Voting is open: count down to close
+    target = VOTING_CLOSE;
+    label = 'The arena closes in';
+    if (votingNotYetOpen) {
+      votingNotYetOpen = false;
+      document.body.classList.remove('voting-locked');
+      const cdLabel = document.querySelector('.countdown-label');
+      if (cdLabel) cdLabel.textContent = label;
+      // Re-render grid so click handlers respond
+      renderGrid(document.getElementById('search').value);
+    }
+  } else {
+    // Voting closed
     ['d','h','m','s'].forEach(k => document.getElementById('cd-'+k).textContent = '00');
     if (!votingClosed) {
       votingClosed = true;
@@ -65,6 +90,8 @@ function updateCountdown() {
     }
     return;
   }
+
+  const diff = target - now;
   const d = Math.floor(diff / 86400000);
   const h = Math.floor((diff % 86400000) / 3600000);
   const m = Math.floor((diff % 3600000) / 60000);
@@ -106,6 +133,10 @@ renderGrid();
 // ============ SELECTION ============
 function selectNominee(name) {
   if (votingClosed) return;
+  if (Date.now() < VOTING_OPEN) {
+    showPreLaunchModal();
+    return;
+  }
   selectedNominee = name;
   document.querySelectorAll('.nominee').forEach(el => {
     const match = el.dataset.name === name;
@@ -124,6 +155,47 @@ function selectNominee(name) {
     });
   }, 200);
 }
+
+// ============ PRE-LAUNCH MODAL ============
+function showPreLaunchModal() {
+  const modal = document.getElementById('pre-launch-modal');
+  modal.classList.add('visible');
+  document.body.style.overflow = 'hidden';
+  updatePreLaunchCountdown();
+}
+
+function updatePreLaunchCountdown() {
+  const diff = VOTING_OPEN - Date.now();
+  if (diff <= 0) {
+    document.getElementById('pre-launch-modal').classList.remove('visible');
+    document.body.style.overflow = '';
+    return;
+  }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  const el = document.getElementById('pre-launch-time');
+  if (el) el.textContent = `${String(d).padStart(2,'0')}d ${String(h).padStart(2,'0')}h ${String(m).padStart(2,'0')}m ${String(s).padStart(2,'0')}s`;
+}
+setInterval(() => {
+  if (document.getElementById('pre-launch-modal')?.classList.contains('visible')) {
+    updatePreLaunchCountdown();
+  }
+}, 1000);
+
+// Pre-launch modal close button
+document.addEventListener('click', (e) => {
+  if (e.target && e.target.id === 'btn-prelaunch-close') {
+    document.getElementById('pre-launch-modal').classList.remove('visible');
+    document.body.style.overflow = '';
+  }
+  // Click outside modal to close
+  if (e.target && e.target.id === 'pre-launch-modal') {
+    document.getElementById('pre-launch-modal').classList.remove('visible');
+    document.body.style.overflow = '';
+  }
+});
 
 document.getElementById('grid').addEventListener('click', (e) => {
   const card = e.target.closest('.nominee');
