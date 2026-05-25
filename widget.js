@@ -339,7 +339,7 @@ async function loadStats() {
     if (typeof data.total === 'number') {
       document.getElementById('total-votes').textContent = data.total.toLocaleString();
     }
-    if (Array.isArray(data.top5) && data.top5.length > 0) {
+    if (Array.isArray(data.top5) && data.top5.length > 0 && data.total > 0) {
       // Shuffle to display in random order (rank is intentionally hidden)
       const shuffled = [...data.top5].sort(() => Math.random() - 0.5);
       const lb = document.getElementById('champions-list');
