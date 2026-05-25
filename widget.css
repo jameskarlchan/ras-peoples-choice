@@ -1,5 +1,8 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Override any parent container backgrounds (Webflow embed wrapper) */
+html, body { background: #0F0B08 !important; }
+
 :root {
   --gold:           #E8C97A;
   --gold-bright:    #F5DC8E;
@@ -1247,4 +1250,37 @@ body.voting-closed #cast-vote-section { display: none; }
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ====================== PRE-LAUNCH LOCKED STATE ====================== */
+
+body.voting-locked #cast-vote-section {
+  display: none;
+}
+
+body.voting-locked .nominee {
+  cursor: pointer;
+  position: relative;
+}
+
+body.voting-locked .nominee:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-bright);
+}
+
+/* Subtle lock indicator on cards in locked state */
+body.voting-locked .nominee::before {
+  content: '';
+  background: linear-gradient(135deg, var(--gold-deep), transparent);
+  opacity: 0.4;
+}
+
+/* Pre-launch banner above the grid */
+body.voting-locked .arena-subtitle::after {
+  content: ' (voting opens 27 May 2026)';
+  color: var(--gold);
+  font-style: normal;
+  font-family: 'Cinzel', serif;
+  font-size: 0.85em;
+  letter-spacing: 0.05em;
 }
