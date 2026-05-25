@@ -3,21 +3,6 @@
 /* Override any parent container backgrounds (Webflow embed wrapper) */
 html, body { background: #0F0B08 !important; }
 
-/* Force-extend dark background to cover ANY parent the widget sits inside */
-body {
-  background: #0F0B08 !important;
-}
-
-/* Bleed the widget background outside its container to cover Webflow gaps */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: #0F0B08;
-  z-index: -10;
-  pointer-events: none;
-}
-
 :root {
   --gold:           #E8C97A;
   --gold-bright:    #F5DC8E;
