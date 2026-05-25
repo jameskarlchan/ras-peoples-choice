@@ -125,26 +125,44 @@ body::after {
 }
 
 .ras-eyebrow-frame {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
   margin-bottom: 28px;
+  flex-wrap: wrap;
+  max-width: 100%;
 }
 
 .ras-eyebrow-line {
   width: 60px;
   height: 1px;
   background: linear-gradient(to right, transparent, var(--gold), transparent);
+  flex-shrink: 0;
 }
 
 .ras-eyebrow {
   font-family: 'Cinzel', serif;
   font-weight: 500;
-  font-size: 11px;
-  letter-spacing: 0.5em;
+  font-size: clamp(9px, 1.6vw, 11px);
+  letter-spacing: 0.4em;
   color: var(--gold);
   text-transform: uppercase;
   white-space: nowrap;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .ras-eyebrow {
+    letter-spacing: 0.25em;
+    font-size: 9px;
+  }
+  .ras-eyebrow-line {
+    width: 30px;
+  }
+  .ras-eyebrow-frame {
+    gap: 10px;
+  }
 }
 
 .ras-hero h1 {
@@ -497,13 +515,29 @@ body::after {
 
 .champions-loading {
   text-align: center;
-  padding: 32px 20px;
+  padding: 48px 24px;
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  color: var(--cream-dim);
-  font-size: 15px;
-  letter-spacing: 0.05em;
+  color: var(--cream);
+  font-size: clamp(15px, 2.2vw, 18px);
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  max-width: 540px;
+  margin: 0 auto;
+  position: relative;
 }
+
+.champions-loading::before,
+.champions-loading::after {
+  content: '✦';
+  display: block;
+  color: var(--gold);
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.champions-loading::before { margin-bottom: 20px; }
+.champions-loading::after { margin-top: 20px; }
 
 /* ====================== ARENA SECTION HEADER ====================== */
 
@@ -1280,11 +1314,11 @@ body::after {
 .ras-rules h3 {
   font-family: 'Cinzel', serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: #5C3A1E;
-  margin-bottom: 24px;
+  color: #0A0604;
+  margin-bottom: 28px;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -1295,7 +1329,7 @@ body::after {
   content: '❦';
   display: inline-block;
   margin: 0 14px;
-  color: #8B5A2B;
+  color: #2A1810;
   font-size: 0.85em;
   vertical-align: middle;
 }
@@ -1303,18 +1337,18 @@ body::after {
 .ras-rules ul {
   list-style: none;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 17px;
-  line-height: 1.7;
-  color: #3A2410;
+  font-size: 19px;
+  line-height: 1.75;
+  color: #0A0604;
   font-weight: 500;
   position: relative;
   z-index: 1;
 }
 
 .ras-rules li {
-  padding-left: 24px;
+  padding-left: 26px;
   position: relative;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .ras-rules li:last-child { margin-bottom: 0; }
@@ -1323,15 +1357,15 @@ body::after {
   content: '✦';
   position: absolute;
   left: 0;
-  color: #8B5A2B;
-  font-size: 11px;
-  top: 7px;
+  color: #2A1810;
+  font-size: 12px;
+  top: 8px;
 }
 
 @media (max-width: 600px) {
   .ras-scroll-body { padding: 36px 28px; }
-  .ras-rules h3 { font-size: 12px; }
-  .ras-rules ul { font-size: 15px; }
+  .ras-rules h3 { font-size: 14px; }
+  .ras-rules ul { font-size: 17px; }
 }
 
 /* ====================== CLOSED STATE ====================== */
