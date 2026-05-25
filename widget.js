@@ -65,7 +65,7 @@ function updateCountdown() {
     label = 'The arena opens in';
     if (!document.body.classList.contains('voting-locked')) {
       document.body.classList.add('voting-locked');
-      const cdLabel = document.querySelector('.countdown-label');
+      const cdLabel = document.querySelector('.ras-countdown-label');
       if (cdLabel) cdLabel.textContent = label;
     }
   } else if (now < VOTING_CLOSE) {
@@ -75,7 +75,7 @@ function updateCountdown() {
     if (votingNotYetOpen) {
       votingNotYetOpen = false;
       document.body.classList.remove('voting-locked');
-      const cdLabel = document.querySelector('.countdown-label');
+      const cdLabel = document.querySelector('.ras-countdown-label');
       if (cdLabel) cdLabel.textContent = label;
       // Re-render grid so click handlers respond
       renderGrid(document.getElementById('search').value);
@@ -158,8 +158,8 @@ function selectNominee(name) {
 
 // ============ PRE-LAUNCH MODAL ============
 function showPreLaunchModal() {
-  const modal = document.getElementById('pre-launch-modal');
-  modal.classList.add('visible');
+  const ras-modal = document.getElementById('pre-launch-modal');
+  ras-modal.classList.add('visible');
   document.body.style.overflow = 'hidden';
   updatePreLaunchCountdown();
 }
@@ -184,13 +184,13 @@ setInterval(() => {
   }
 }, 1000);
 
-// Pre-launch modal close button
+// Pre-launch ras-modal close button
 document.addEventListener('click', (e) => {
   if (e.target && e.target.id === 'btn-prelaunch-close') {
     document.getElementById('pre-launch-modal').classList.remove('visible');
     document.body.style.overflow = '';
   }
-  // Click outside modal to close
+  // Click outside ras-modal to close
   if (e.target && e.target.id === 'pre-launch-modal') {
     document.getElementById('pre-launch-modal').classList.remove('visible');
     document.body.style.overflow = '';
@@ -229,13 +229,13 @@ searchClear.addEventListener('click', () => {
 });
 
 // ============ VOTE FLOW ============
-const modal = document.getElementById('modal');
+const ras-modal = document.getElementById('ras-modal');
 const voteBtn = document.getElementById('vote-btn');
 
 voteBtn.addEventListener('click', () => {
   if (!selectedNominee || votingClosed) return;
   document.getElementById('modal-selection').textContent = selectedNominee;
-  modal.classList.add('visible');
+  ras-modal.classList.add('visible');
   document.body.style.overflow = 'hidden';
   if (window.grecaptcha) try { grecaptcha.reset(); } catch(e) {}
   captchaToken = null;
@@ -243,10 +243,10 @@ voteBtn.addEventListener('click', () => {
 });
 
 document.getElementById('btn-cancel').addEventListener('click', closeModal);
-modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+ras-modal.addEventListener('click', (e) => { if (e.target === ras-modal) closeModal(); });
 
 function closeModal() {
-  modal.classList.remove('visible');
+  ras-modal.classList.remove('visible');
   document.body.style.overflow = '';
 }
 
@@ -323,10 +323,10 @@ document.getElementById('btn-share').addEventListener('click', async () => {
 });
 
 function showToast(msg) {
-  const toast = document.getElementById('toast');
-  toast.textContent = msg;
-  toast.classList.add('visible');
-  setTimeout(() => toast.classList.remove('visible'), 3500);
+  const ras-toast = document.getElementById('ras-toast');
+  ras-toast.textContent = msg;
+  ras-toast.classList.add('visible');
+  setTimeout(() => ras-toast.classList.remove('visible'), 3500);
 }
 
 // ============ LIVE STATS ============
@@ -363,7 +363,7 @@ setInterval(loadStats, 30000);
 
 // ============ GOLD EMBER PARTICLES ============
 function spawnParticles() {
-  const container = document.getElementById('particles');
+  const container = document.getElementById('ras-particles');
   if (!container) return;
 
   const isMobile = window.innerWidth < 768;
@@ -371,7 +371,7 @@ function spawnParticles() {
 
   for (let i = 0; i < count; i++) {
     const p = document.createElement('span');
-    p.className = 'ember';
+    p.className = 'ras-ember';
     const left = Math.random() * 100;
     const size = 1 + Math.random() * 2.5;
     const duration = 12 + Math.random() * 16;
@@ -398,7 +398,7 @@ window.addEventListener('scroll', () => {
 
 // ============ TYPEWRITER ON LATIN ============
 function typewriterLatin() {
-  const el = document.querySelector('.hero .latin');
+  const el = document.querySelector('.ras-hero .ras-latin');
   if (!el || el.dataset.typed) return;
   el.dataset.typed = '1';
   const text = el.textContent;
