@@ -1152,23 +1152,152 @@ body::after {
 
 /* ====================== RULES ====================== */
 
+/* ====================== RULES (THE SCROLL) ====================== */
+
 .ras-rules {
   max-width: 720px;
-  margin: 32px auto 32px;
-  padding: 24px 28px;
-  background: rgba(0,0,0,0.3);
-  border-left: 3px solid var(--gold);
-  border-radius: 2px;
+  margin: 48px auto 32px;
+  padding: 0;
+  background: none;
+  border-left: none;
+  border-radius: 0;
+  position: relative;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
 }
 
+/* The parchment scroll body */
+.ras-scroll-body {
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(120, 80, 40, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 70%, rgba(100, 60, 30, 0.12) 0%, transparent 50%),
+    linear-gradient(135deg, #F5E6C8 0%, #E8D4A8 50%, #F0DEB8 100%);
+  padding: 56px 56px 56px;
+  position: relative;
+  /* Subtle aged paper texture via repeating gradient */
+  background-blend-mode: multiply, multiply, normal;
+}
+
+/* Inner darker frame to evoke an old document edge */
+.ras-scroll-body::before {
+  content: '';
+  position: absolute;
+  inset: 16px;
+  border: 1px solid rgba(120, 80, 40, 0.25);
+  pointer-events: none;
+}
+
+/* Aged stains/wear on the parchment */
+.ras-scroll-body::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80px 30px at 20% 25%, rgba(100, 60, 30, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60px 20px at 85% 60%, rgba(120, 70, 30, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 100px 40px at 50% 85%, rgba(100, 60, 30, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Top scroll curl */
+.ras-scroll-top, .ras-scroll-bottom {
+  height: 28px;
+  background:
+    linear-gradient(180deg, #8B5A2B 0%, #6B3F1A 50%, #4A2810 100%);
+  position: relative;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 220, 160, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.ras-scroll-top {
+  border-radius: 14px 14px 4px 4px;
+  margin-bottom: -2px;
+}
+
+.ras-scroll-bottom {
+  border-radius: 4px 4px 14px 14px;
+  margin-top: -2px;
+}
+
+/* Decorative line on the curls */
+.ras-scroll-top::before, .ras-scroll-bottom::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(to right,
+    transparent 0%,
+    rgba(232, 201, 122, 0.5) 20%,
+    rgba(232, 201, 122, 0.8) 50%,
+    rgba(232, 201, 122, 0.5) 80%,
+    transparent 100%);
+  transform: translateY(-50%);
+}
+
+/* End caps of the scroll - the wood/horn tips */
+.ras-scroll-top::after, .ras-scroll-bottom::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 100%;
+  top: 0;
+  background: linear-gradient(180deg, #3D2010 0%, #6B3F1A 50%, #3D2010 100%);
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.4);
+}
+
+.ras-scroll-top::after, .ras-scroll-bottom::after {
+  left: -12px;
+  border-radius: 50%;
+  box-shadow: inset -2px 0 6px rgba(0,0,0,0.4), inset 2px 0 4px rgba(255,200,150,0.2);
+}
+
+.ras-scroll-top::after { border-radius: 50% 50% 4px 4px / 60% 60% 4px 4px; }
+.ras-scroll-bottom::after { border-radius: 4px 4px 50% 50% / 4px 4px 60% 60%; }
+
+/* Right end cap mirrors via additional decoration */
+.ras-scroll-end-right-top, .ras-scroll-end-right-bottom {
+  position: absolute;
+  width: 24px;
+  height: 28px;
+  right: -12px;
+  background: linear-gradient(180deg, #3D2010 0%, #6B3F1A 50%, #3D2010 100%);
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.4), inset -2px 0 4px rgba(255,200,150,0.2);
+}
+
+.ras-scroll-end-right-top {
+  top: 0;
+  border-radius: 50% 50% 4px 4px / 60% 60% 4px 4px;
+}
+
+.ras-scroll-end-right-bottom {
+  bottom: 0;
+  border-radius: 4px 4px 50% 50% / 4px 4px 60% 60%;
+}
+
+/* Title styling for the scroll */
 .ras-rules h3 {
   font-family: 'Cinzel', serif;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 18px;
+  color: #5C3A1E;
+  margin-bottom: 24px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+
+.ras-rules h3::before, .ras-rules h3::after {
+  content: '❦';
+  display: inline-block;
+  margin: 0 14px;
+  color: #8B5A2B;
+  font-size: 0.85em;
+  vertical-align: middle;
 }
 
 .ras-rules ul {
@@ -1176,23 +1305,33 @@ body::after {
   font-family: 'Cormorant Garamond', serif;
   font-size: 17px;
   line-height: 1.7;
-  color: #E5DCC4;
-  font-weight: 400;
+  color: #3A2410;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
 }
 
 .ras-rules li {
-  padding-left: 22px;
+  padding-left: 24px;
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 
+.ras-rules li:last-child { margin-bottom: 0; }
+
 .ras-rules li::before {
-  content: '◆';
+  content: '✦';
   position: absolute;
   left: 0;
-  color: var(--gold);
-  font-size: 10px;
-  top: 9px;
+  color: #8B5A2B;
+  font-size: 11px;
+  top: 7px;
+}
+
+@media (max-width: 600px) {
+  .ras-scroll-body { padding: 36px 28px; }
+  .ras-rules h3 { font-size: 12px; }
+  .ras-rules ul { font-size: 15px; }
 }
 
 /* ====================== CLOSED STATE ====================== */
