@@ -4,7 +4,7 @@ const VOTING_CLOSE = new Date('2026-09-03T00:00:00+08:00').getTime();
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw1aNpbIZoDmor4jI8Rgrj5P0Yr7FvSrjBxLqR9g8ruAnmscxwTfNH6P1X_kWwAoEuaWg/exec';
 
 const NOMINEES = [
-  { name: "1-ARDEN BAR AND LOUNGE",                     logoUrl: null },
+  { name: "1-ARDEN BAR AND LOUNGE",                     logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/v1779730103/Arden_logo_jxncls.png" },
   { name: "ARTEASTIQ",                                  logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779263169/LOGO_ARTEASTIQ_TRANS_1000x1000-18_yxoykp.png" },
   { name: "BARISTART COFFEE SINGAPORE (TRAS STREET)",   logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779262380/BAC_Official_Logo_Black_chhv6r.jpg" },
   { name: "BURGER KING SINGAPORE",                      logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779262539/BK_LOGO_PRIMARY_BACKGROUND_1_asa13u.png" },
@@ -18,16 +18,16 @@ const NOMINEES = [
   { name: "FOOD CAPITAL",                               logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779262990/FC_LogoHQ_1_1_1_tttcmq.png" },
   { name: "GUZMAN Y GOMEZ",                             logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779727570/GUZMAN_Y_GOMEZ_PRIMARY_LOGO_CIRCLE_RGB_2024_mwkxd6.png" },
   { name: "HAI TIEN LO, PAN PACIFIC SINGAPORE",         logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779263014/Hai_Tien_Lo_Logo_euhkby.jpg" },
-  { name: "KAARLA WOOD-FIRE GRILL AND BAR",             logoUrl: null },
+  { name: "KAARLA WOOD-FIRE GRILL AND BAR",             logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/v1779730102/kaarla_logo_mfhmyh.png" },
   { name: "KEYAKI, PAN PACIFIC SINGAPORE",              logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779263034/Keyaki_Logo_fyy5m3.jpg" },
   { name: "MODU SAMGYETANG SPECIALTY KOREAN RESTAURANT", logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779263074/MODU_logo_1_1_a2rvqp.png" },
-  { name: "OUMI MODERN JAPANESE KAPPO RESTAURANT",      logoUrl: null },
+  { name: "OUMI MODERN JAPANESE KAPPO RESTAURANT",      logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/v1779730102/oumi_logo_yowfs0.png" },
   { name: "PACIFIC EMPORIUM, PAN PACIFIC SINGAPORE",    logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779263100/Pacific_Emporium_Logo_vvmdp9.jpg" },
   { name: "PRINCESS TERRACE AUTHENTIC PENANG CUISINE",  logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779263130/New_Princess_Terrace_Logo_black-9Sep_1_wqigx6.png" },
   { name: "PUTIEN",                                     logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779267124/logo1024x1024px-02_1_exmies.jpg" },
   { name: "QIN RESTAURANT & BAR",                       logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779262672/QIN_Logo_mvcdia.png" },
   { name: "SAMPANMAN",                                  logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779263169/LOGO_ARTEASTIQ_TRANS-04_1_hvgl8z.png" },
-  { name: "SOL & LUNA",                                 logoUrl: null },
+  { name: "SOL & LUNA",                                 logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779730102/sol_n_luna_logo_w1fr5m.png" },
   { name: "SURREY HILLS GROCER",                        logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779263217/Surrey_Hills.jpg_1_tuuufn.jpg" },
   { name: "SWENSEN'S",                                  logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779263254/Swensen_s_Logo_Red_Outline_emqxnf.png" },
   { name: "TEMPER. WINE ROOM & LOUNGE",                 logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/v1779267908/Copy_of_temperlogo_100px_cream_ds3mrs.svg" },
@@ -37,7 +37,7 @@ const NOMINEES = [
   { name: "TUNGLOK PEKING DUCK",                        logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779262669/TungLok_Peking_Duck_Logo_monbav.png" },
   { name: "TUNGLOK SEAFOOD",                            logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779262670/TungLok_Seafood_Logo_kxkspd.png" },
   { name: "TUNGLOK SIGNATURES",                         logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779262671/TungLok_Signatures_Logo_kvrpi1.png" },
-  { name: "WILDSEED CAFE AT THE ALKAFF MANSION",        logoUrl: null },
+  { name: "WILDSEED CAFE AT THE ALKAFF MANSION",        logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/v1779730101/wildseed_cafe_logo_mefq2l.jpg" },
   { name: "YO-CHI SINGAPORE",                           logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779263385/Yo-Chi_Singapore_Logo_1_rtjkrz.png" }
 ];
 
