@@ -267,12 +267,12 @@ document.getElementById('btn-confirm').addEventListener('click', async () => {
   btn.disabled = true;
   btn.textContent = 'Submitting...';
   try {
-    await fetch(APPS_SCRIPT_URL, {
+    const res = await fetch(APPS_SCRIPT_URL, {
       method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify({ nominee: selectedNominee, token: captchaToken })
     });
+    const data = await res.json().catch(() => ({ ok: true }));
     handleVoteSuccess();
   } catch (err) {
     showToast('The arena could not hear your vote. Try once more.');
