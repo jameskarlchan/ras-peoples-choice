@@ -30,7 +30,7 @@ const NOMINEES = [
   { name: "SOL & LUNA",                                 logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779730102/sol_n_luna_logo_w1fr5m.png" },
   { name: "SURREY HILLS GROCER",                        logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779263217/Surrey_Hills.jpg_1_tuuufn.jpg" },
   { name: "SWENSEN'S",                                  logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779263254/Swensen_s_Logo_Red_Outline_emqxnf.png" },
-  { name: "TEMPER. WINE ROOM & LOUNGE",                 logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/v1779267908/Copy_of_temperlogo_100px_cream_ds3mrs.svg" },
+  { name: "TEMPER. WINE ROOM & LOUNGE",                 logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779762569/Copy_of_temperlogo_100px_cream_ds3mrs.svg" },
   { name: "THE LANDMARK",                               logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/v1779264333/Landmark_Logo_2023_Singapore_1_vfe8kb.png" },
   { name: "TIEN COURT AUTHENTIC TEOCHEW RESTAURANT",    logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779263351/Tien_Court_new_logo_BLACK_14May2021-01_3_1_opfqd7.png" },
   { name: "TÓNG LÈ PRIVATE DINING",                     logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779262671/To%CC%81ng_Le%CC%80_Private_Dining_Logo_qsiwko.png" },
