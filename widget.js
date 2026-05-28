@@ -12,6 +12,7 @@ const NOMINEES = [
   { name: "CAVERN RESTAURANT",                          logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779262670/Cavern_Logo_mrqnbn.png" },
   { name: "CEDELE",                                     logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/v1779266491/Cedele_Logo_1000_x_1000px_Reverse_t0yltv.png" },
   { name: "CÉ LA VI",                                   logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779262841/CeLaVi_Red_y6hrtp.svg" },
+  { name: "DANCING CRAB",                               logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779940576/Dancing_Crab_Logo_lakraa.png" },
   { name: "DIAN XIAO ER",                               logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779262901/DXE_Logo_1x1_1_jicjh5.jpg" },
   { name: "DIN TAI FUNG",                               logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779262938/DTF_Logo_1_avun65.png" },
   { name: "EDGE, PAN PACIFIC SINGAPORE",                logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779262965/Edge_Logo_hrpo53.jpg" },
