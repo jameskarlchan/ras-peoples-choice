@@ -336,17 +336,15 @@ function showToast(msg) {
 async function loadStats() {
   if (APPS_SCRIPT_URL.startsWith('PASTE')) return;
   try {
-    const res = await fetch(APPS_SCRIPT_URL + '?action=stats');
+    const res = await fetch(APPS_SCRIPT_URL + '?action=leaderboard');
     if (!res.ok) throw new Error('Bad response');
     const data = await res.json();
     if (typeof data.total === 'number') {
       document.getElementById('total-votes').textContent = data.total.toLocaleString();
     }
-    if (Array.isArray(data.top5) && data.top5.length > 0 && data.total > 0) {
-      // Shuffle to display in random order (rank is intentionally hidden)
-      const shuffled = [...data.top5].sort(() => Math.random() - 0.5);
+    if (Array.isArray(data.leaders) && data.leaders.length > 0) {
       const lb = document.getElementById('champions-list');
-      lb.innerHTML = shuffled.map((name) => `
+      lb.innerHTML = data.leaders.map((name) => `
         <li class="champion-row">
           <span class="champion-rank">✦</span>
           <span class="champion-name">${name}</span>
