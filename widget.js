@@ -19,7 +19,7 @@ const NOMINEES = [
   { name: "FOOD CAPITAL",                               logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779262990/FC_LogoHQ_1_1_1_tttcmq.png" },
   { name: "GUZMAN Y GOMEZ",                             logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779727570/GUZMAN_Y_GOMEZ_PRIMARY_LOGO_CIRCLE_RGB_2024_mwkxd6.png" },
   { name: "HAI TIEN LO, PAN PACIFIC SINGAPORE",         logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779263014/Hai_Tien_Lo_Logo_euhkby.jpg" },
-  { name: "J65",                                     logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/v1779783737/LOGO_HJTS_HORIZONTAL_RGB_y4hnla.png" },
+  { name: "J65",                                     logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/v1780030089/LOGO_HJTS_HORIZONTAL_RGB_y4hnla.png" },
   { name: "KAARLA WOOD-FIRE GRILL AND BAR",             logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/v1779730102/kaarla_logo_mfhmyh.png" },
   { name: "KAZBAR",                                     logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/v1779937540/kazbar_logo_high_res-1_syscud.png" },
   { name: "KEYAKI, PAN PACIFIC SINGAPORE",              logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779263034/Keyaki_Logo_fyy5m3.jpg" },
