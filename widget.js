@@ -23,6 +23,7 @@ const NOMINEES = [
   { name: "KAARLA WOOD-FIRE GRILL AND BAR",             logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/v1779730102/kaarla_logo_mfhmyh.png" },
   { name: "KAZBAR",                                     logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/v1779937540/kazbar_logo_high_res-1_syscud.png" },
   { name: "KEYAKI, PAN PACIFIC SINGAPORE",              logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779263034/Keyaki_Logo_fyy5m3.jpg" },
+  { name: "MARCHÉ SINGAPORE", logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/v1780026551/Marche_Colour_Green_vectorised_PANTONE_360C_wgv0oc.png" },
   { name: "MODU SAMGYETANG SPECIALTY KOREAN RESTAURANT", logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779263074/MODU_logo_1_1_a2rvqp.png" },
   { name: "OUMI MODERN JAPANESE KAPPO RESTAURANT",      logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/v1779730102/oumi_logo_yowfs0.png" },
   { name: "PACIFIC EMPORIUM, PAN PACIFIC SINGAPORE",    logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779263100/Pacific_Emporium_Logo_vvmdp9.jpg" },
