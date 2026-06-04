@@ -45,6 +45,7 @@ const NOMINEES = [
   { name: "TUNGLOK PEKING DUCK",                        logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779262669/TungLok_Peking_Duck_Logo_monbav.png" },
   { name: "TUNGLOK SEAFOOD",                            logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779262670/TungLok_Seafood_Logo_kxkspd.png" },
   { name: "TUNGLOK SIGNATURES",                         logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779262671/TungLok_Signatures_Logo_kvrpi1.png" },
+  { name: "WARUNG LEKO",                                logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1780569055/Warung_Leko_Logo_PNG_q7xalh.png" },
   { name: "WILDSEED CAFE AT THE ALKAFF MANSION",        logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/v1779730101/wildseed_cafe_logo_mefq2l.jpg" },
   { name: "YO-CHI SINGAPORE",                           logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/q_auto/f_auto/v1779263385/Yo-Chi_Singapore_Logo_1_rtjkrz.png" }
 ];
