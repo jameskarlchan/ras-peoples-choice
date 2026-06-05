@@ -269,25 +269,69 @@ window.onCaptchaExpired = () => {
   document.getElementById('btn-confirm').disabled = true;
 };
 
-document.getElementById('btn-confirm').addEventListener('click', async () => {
+document.getElementById('btn-confirm').addEventListener('click', () => {
   if (!captchaToken || !selectedNominee) return;
-  const btn = document.getElementById('btn-confirm');
-  btn.disabled = true;
-  btn.textContent = 'Submitting...';
-  try {
-    const res = await fetch(APPS_SCRIPT_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'text/plain' },
-      body: JSON.stringify({ nominee: selectedNominee, token: captchaToken })
+
+  // Capture state before optimistic UI so rollback uses the right values
+  const submittedNominee = selectedNominee;
+  const submittedToken = captchaToken;
+
+  // Show success instantly — no waiting on the network
+  handleVoteSuccess();
+
+  // Fire the actual vote in the background. If it fails, roll back.
+  fetch(APPS_SCRIPT_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain' },
+    body: JSON.stringify({ nominee: submittedNominee, token: submittedToken })
+  })
+    .then(res => res.json().catch(() => ({ ok: true })))
+    .then(data => {
+      if (!data || data.ok === false) {
+        rollbackVote(submittedNominee, 'The arena could not record your vote. Please confirm once more.');
+      }
+    })
+    .catch(() => {
+      rollbackVote(submittedNominee, 'The arena could not hear your vote. Please confirm once more.');
     });
-    const data = await res.json().catch(() => ({ ok: true }));
-    handleVoteSuccess();
-  } catch (err) {
-    showToast('The arena could not hear your vote. Try once more.');
-    btn.disabled = false;
-    btn.textContent = 'Confirm Vote';
-  }
 });
+
+function rollbackVote(nominee, message) {
+  const successEl = document.getElementById('success');
+  const stillOnSuccess = successEl.classList.contains('visible');
+
+  // If the voter has already moved on (clicked Vote Again or Share),
+  // we don't yank them back — just refresh totals and toast quietly.
+  if (stillOnSuccess) {
+    successEl.classList.remove('visible');
+
+    // Restore the selection state in case the user wants to retry
+    selectedNominee = nominee;
+    document.querySelectorAll('.nominee').forEach(el => {
+      const match = el.dataset.name === nominee;
+      el.classList.toggle('selected', match);
+      el.setAttribute('aria-checked', match ? 'true' : 'false');
+    });
+    document.getElementById('champion-name').textContent = nominee;
+    document.getElementById('cast-vote-section').classList.add('has-selection');
+    document.getElementById('vote-btn').disabled = false;
+
+    // Re-open the confirm modal with a fresh captcha
+    captchaToken = null;
+    if (window.grecaptcha) try { grecaptcha.reset(); } catch(e) {}
+    document.getElementById('modal-selection').textContent = nominee;
+    modal.classList.add('visible');
+    document.body.style.overflow = 'hidden';
+    const confirmBtn = document.getElementById('btn-confirm');
+    confirmBtn.disabled = true;
+    confirmBtn.textContent = 'Confirm Vote';
+  }
+
+  // Refresh total from source of truth rather than guessing local arithmetic
+  loadStats();
+
+  showToast(message);
+}
 
 function handleVoteSuccess() {
   closeModal();
