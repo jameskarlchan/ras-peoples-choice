@@ -39,7 +39,7 @@ const NOMINEES = [
   { name: "SWENSEN'S",                                  logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_300/v1779263254/Swensen_s_Logo_Red_Outline_emqxnf.png" },
   { name: "TANYU GRILLED FISH 探鱼烤鱼",                 logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_300/v1780078457/TANYU_Logo_02_udrrpm.png" },
   { name: "TEMPER. WINE ROOM & LOUNGE",                 logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_300/v1779762569/Copy_of_temperlogo_100px_cream_ds3mrs.svg" },
-  { name: "THE LANDMARK",                               logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/v1779264333/Landmark_Logo_2023_Singapore_1_vfe8kb.png" },
+  { name: "THE LANDMARK",                               logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_300/v1779264333/Landmark_Logo_2023_Singapore_1_vfe8kb.png" },
   { name: "TIEN COURT AUTHENTIC TEOCHEW RESTAURANT",    logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_300/v1779263351/Tien_Court_new_logo_BLACK_14May2021-01_3_1_opfqd7.png" },
   { name: "TÓNG LÈ PRIVATE DINING",                     logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_300/v1779262671/To%CC%81ng_Le%CC%80_Private_Dining_Logo_qsiwko.png" },
   { name: "TUNGLOK PEKING DUCK",                        logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_300/v1779262669/TungLok_Peking_Duck_Logo_monbav.png" },
