@@ -21,7 +21,7 @@ const NOMINEES = [
   { name: "FOOD CAPITAL",                               logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_300/v1779262990/FC_LogoHQ_1_1_1_tttcmq.png" },
   { name: "GUZMAN Y GOMEZ",                             logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_300/v1779727570/GUZMAN_Y_GOMEZ_PRIMARY_LOGO_CIRCLE_RGB_2024_mwkxd6.png" },
   { name: "HAI TIEN LO, PAN PACIFIC SINGAPORE",         logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_300/v1779263014/Hai_Tien_Lo_Logo_euhkby.jpg" },
-  { name: "ICHIBAN BOSHI",                              logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_300/v1781000169/IBB_LOGOLOCKUP_FA_VERTICAL_PANTONE_20250821_IKAINK_ICHIBANRED_ogsz44.jpg"},
+  { name: "ICHIBAN BOSHI",                              logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_500/v1781000169/IBB_LOGOLOCKUP_FA_VERTICAL_PANTONE_20250821_IKAINK_ICHIBANRED_ogsz44.jpg"},
   { name: "J65",                                     logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_300/v1780030089/LOGO_HJTS_HORIZONTAL_RGB_y4hnla.png" },
   { name: "KAARLA WOOD-FIRE GRILL AND BAR",             logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_300/v1779730102/kaarla_logo_mfhmyh.png" },
   { name: "KAZBAR",                                     logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_300/v1779937540/kazbar_logo_high_res-1_syscud.png" },
