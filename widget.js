@@ -19,6 +19,7 @@ const NOMINEES = [
   { name: "DIN TAI FUNG",                               logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_300/v1779262938/DTF_Logo_1_avun65.png" },
   { name: "EDGE, PAN PACIFIC SINGAPORE",                logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_300/v1779262965/Edge_Logo_hrpo53.jpg" },
   { name: "FOOD CAPITAL",                               logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_300/v1779262990/FC_LogoHQ_1_1_1_tttcmq.png" },
+  { name: "GINGER",                         logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_300/v1781775123/Ginger_Logo_FA_Pantone_1265_C_efwa8o.png" },
   { name: "GUZMAN Y GOMEZ",                             logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_300/v1779727570/GUZMAN_Y_GOMEZ_PRIMARY_LOGO_CIRCLE_RGB_2024_mwkxd6.png" },
   { name: "HAI TIEN LO, PAN PACIFIC SINGAPORE",         logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_300/v1779263014/Hai_Tien_Lo_Logo_euhkby.jpg" },
   { name: "ICHIBAN BOSHI",                              logoUrl: "https://res.cloudinary.com/dpzqnfemq/image/upload/f_auto,q_auto,w_300/v1781233195/copy_of_ibb_logolockup_fa_vertical_pantone_20250821_ikaink_ichibanred_ogsz44.jpg"},
